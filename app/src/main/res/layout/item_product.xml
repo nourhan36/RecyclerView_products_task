@@ -1,107 +1,153 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:background="@drawable/blue_border"
-    app:cardBackgroundColor="@android:color/white"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp">
+    android:layout_margin="4dp"
+    app:cardCornerRadius="20dp"
+    app:strokeColor="@color/stroke_color">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:layout_height="match_parent"
+        android:paddingBottom="8dp">
 
         <ImageView
-            android:id="@+id/imv_product"
+            android:id="@+id/product_img"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.4"
+            app:layout_constraintHeight_percent="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="1"
-            tools:src="@tools:sample/backgrounds/scenic" />
+            tools:ignore="ContentDescription" />
 
         <TextView
-            android:id="@+id/tv_productName"
+            android:id="@+id/product_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:lines="1"
+            android:maxLines="1"
             android:textColor="@color/dark_blue"
-            android:textStyle="bold"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imv_product"
-            tools:text="Nike Air Jordan" />
+            app:layout_constraintTop_toBottomOf="@id/product_img"
+            tools:text="jordan" />
 
         <TextView
-            android:id="@+id/tv_productDescription"
+            android:id="@+id/product_description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:lines="1"
+            android:maxLines="1"
             android:textColor="@color/dark_blue"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_productName"
-            tools:text="Nike shoes flexible for women" />
+            app:layout_constraintTop_toBottomOf="@id/product_name"
+            tools:text="jordan" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/add_to_wishlist_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:padding="20dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/wishlist_icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:src="@drawable/ic_add" />
+        </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/tv_productPrice"
-            android:layout_width="wrap_content"
+            android:id="@+id/product_price"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_regular"
             android:textColor="@color/dark_blue"
-            android:textStyle="bold"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_productDescription"
-            tools:text="EGP 1,200" />
+            app:layout_constraintTop_toBottomOf="@id/product_description"
+            tools:text="EGP1,200" />
 
         <TextView
-            android:id="@+id/tv_productOldPrice"
+            android:id="@+id/product_old_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="4dp"
             android:background="@drawable/strike_through"
-            android:textColor="@color/light_blue"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/tv_productPrice"
-            app:layout_constraintTop_toBottomOf="@id/tv_productDescription"
-            tools:text="2,000 EGP" />
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/pale_blue"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@id/product_price"
+            app:layout_constraintStart_toEndOf="@id/product_price"
+            app:layout_constraintTop_toTopOf="@id/product_price"
+            tools:text="EGP 1,500" />
 
         <TextView
-            android:id="@+id/tv_productRating"
-            android:layout_width="wrap_content"
+            android:id="@+id/review_tv"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_regular"
             android:textColor="@color/dark_blue"
-            android:textStyle="bold"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/product_price"
+            app:layout_constraintTop_toBottomOf="@id/product_price" />
+
+        <TextView
+            android:id="@+id/review_value_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/dark_blue"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/review_tv"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_productPrice"
-            tools:text="Review (4.6) ★" />
+            app:layout_constraintTop_toBottomOf="@id/product_price"
+            tools:text="(4.5)" />
 
         <ImageView
-            android:id="@+id/favoriteImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="8dp"
-            android:src="@drawable/ic_favorite"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_star"
+            app:layout_constraintBottom_toBottomOf="@id/review_value_tv"
+            app:layout_constraintStart_toEndOf="@id/review_value_tv"
+            app:layout_constraintTop_toTopOf="@id/review_value_tv" />
 
-        <ImageView
-            android:id="@+id/imv_addToCart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_add"
-            app:layout_constraintBottom_toBottomOf="@id/tv_productRating"
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/add_to_cart_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_plus_circle"
+            app:layout_constraintBottom_toBottomOf="@id/review_value_tv"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tv_productRating" />
+            app:layout_constraintTop_toTopOf="@id/review_value_tv" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

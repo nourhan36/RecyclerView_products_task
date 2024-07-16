@@ -15,4 +15,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Recycler View Products Task"
 include(":app")
- 
